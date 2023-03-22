@@ -1,4 +1,12 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+  const router = useRouter();
+  definePageMeta({
+    layout: false,
+  });
+  function callLogin() {
+    router.push("/");
+  }
+</script>
 
 <template>
   <div class="p-8 flex flex-col items-center h-screen mx-auto">
@@ -9,7 +17,7 @@
       <figure class="col-12 col-md-6">
         <img src="/images/tech-recruiting.jpg" alt="tech recruiting" />
       </figure>
-      <form class="col-12 col-md-6 text-center">
+      <form @submit.prevent="callLogin" class="col-12 col-md-6 text-center">
         <fieldset>
           <h3 class="text-2xl">Welcome Back</h3>
           <input
