@@ -1,7 +1,7 @@
 <script lang="ts" setup>
   const router = useRouter();
   definePageMeta({
-    layout: false,
+    layout: "guest",
   });
   function callLogin() {
     router.push("/");
@@ -9,39 +9,55 @@
 </script>
 
 <template>
-  <div class="p-8 flex flex-col items-center h-screen mx-auto">
-    <nuxt-link to="/" class="justify-self-start">
-      <img src="/images/logo.png" alt="logo" width="200" />
-    </nuxt-link>
-    <section class="justify-self-center flex flex-wrap items-center">
-      <figure class="col-12 col-md-6">
-        <img src="/images/tech-recruiting.jpg" alt="tech recruiting" />
-      </figure>
-      <form @submit.prevent="callLogin" class="col-12 col-md-6 text-center">
-        <fieldset>
-          <h3 class="text-2xl">Welcome Back</h3>
-          <input
-            placeholder="email e.g example@example.com"
-            type="email"
-            class="form-input block rounded mx-auto mb-3"
-            id=""
-          />
-          <input
-            placeholder="password"
-            type="password"
-            class="form-input block rounded mx-auto mb-3"
-            id=""
-          />
-        </fieldset>
+  <main class="p-4 text-white">
+    <section
+      class="mx-auto mt-4 p-8 bg-emerald-800 opacity-90 w-fit md:w-1/3 rounded-lg"
+    >
+      <form @submit.prevent="callLogin">
+        <div class="text-center">
+          <nuxt-link to="/">
+            <span>Hire well</span>
+            <img
+              src="/images/logo.png"
+              alt="logo"
+              class="block mx-auto -mt-6"
+              width="100"
+            />
+          </nuxt-link>
+          <h2 class="text-xl mb-4">Log in with</h2>
+          <button class="btn mx-2 mb-2 bg-emerald-500">Google</button
+          ><button class="btn mx-2 mb-2 bg-emerald-500">Facebook</button>
+        </div>
+        <div class="text-center mt-4">
+          <span>or</span>
+          <fieldset class="text-left mt-4 text-sm">
+            <label class="block">
+              Email
+              <input
+                placeholder="email e.g example@example.com"
+                type="email"
+                class="form-input block mb-3 w-full text-sm !bg-emerald-900"
+                id=""
+              />
+            </label>
+            <label class="block">
+              Password
+              <input
+                placeholder="password"
+                type="password"
+                class="form-input block mb-3 w-full text-sm !bg-emerald-900"
+                id=""
+              />
+            </label>
+          </fieldset>
+        </div>
         <button
           type="submit"
-          class="px-3 py-2 bg-blue-500 hover:bg-blue-700 hover:text-white btn"
+          class="w-full px-3 py-2 btn bg-green-700 hover:bg-green-900 text-white"
         >
           Login
         </button>
       </form>
     </section>
-  </div>
+  </main>
 </template>
-
-<style scoped></style>
