@@ -19,6 +19,6 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    background-image: url("public/images/tech-recruiting1.jpg");
+    background-image: url("/images/tech-recruiting1.jpg");
   }
 </style>
